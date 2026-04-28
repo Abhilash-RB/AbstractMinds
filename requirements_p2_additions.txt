@@ -1,0 +1,30 @@
+# ThunderVolts Backend — Additional Dependencies (Prompt 2 additions)
+# Add these to the existing requirements.txt from Prompt 1
+
+# ── ML / Training ───────────────────────────────────────────────────────────
+tensorflow>=2.15.0           # LSTM demand forecaster (Keras included)
+xgboost>=2.0.0               # Bill predictor
+scikit-learn>=1.4.0          # IsolationForest, StandardScaler, metrics
+numpy>=1.26.0
+pandas>=2.2.0
+joblib>=1.3.0                # Parallel processing for sklearn
+
+# ── HTTP / Async ─────────────────────────────────────────────────────────────
+aiohttp>=3.9.0               # POSOCO / Open-Meteo async HTTP fetching
+
+# ── Celery / Task Queue ──────────────────────────────────────────────────────
+celery[redis]>=5.3.6         # Task queue + beat scheduler
+redis>=5.0.1                 # Async Redis client (redis.asyncio)
+
+# ── Auth ─────────────────────────────────────────────────────────────────────
+bcrypt>=4.1.0                # Password hashing (rounds=12)
+python-jose[cryptography]>=3.3.0  # JWT encode/decode
+
+# ── Data Visualisation (notebooks + training scripts) ─────────────────────────
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# ── Jupyter Notebooks ────────────────────────────────────────────────────────
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.27.0
